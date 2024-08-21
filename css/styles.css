@@ -1,0 +1,542 @@
+/* TO CREATE WATCHER: sass --watch scss/styles.scss:css/styles.css */
+@font-face {
+  font-family: "Almarai-ExtraBold";
+  src: url(../Assets/Fonts/Almarai-ExtraBold.ttf) format("trueType");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Almarai-Bold";
+  src: url(../Assets/Fonts/Almarai-Bold.ttf) format("trueType");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Almarai-Regular";
+  src: url(../Assets/Fonts/Almarai-Regular.ttf) format("trueType");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Almarai-Light";
+  src: url(../Assets/Fonts/Almarai-Light.ttf) format("trueType");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BA-Regular";
+  src: url(../Assets/Fonts/BuenosAires-Regular.ttf) format("trueType");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BA-Bold";
+  src: url(../Assets/Fonts/BuenosAires-Bold.ttf) format("trueType");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BA-Light";
+  src: url(../Assets/Fonts/BuenosAires-Light.ttf) format("trueType");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BA-ExtraBold";
+  src: url(../Assets/Fonts/BuenosAires-Black.ttf) format("trueType");
+  font-weight: 800;
+  font-style: normal;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  background-color: #ffffff;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures wrapper takes full viewport height */
+}
+
+main {
+  flex-grow: 1; /* Ensures main content grows to take available space */
+}
+
+footer {
+  background-color: #F2F2F7;
+  padding: 12px 0;
+  text-align: center;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+}
+header .logo img {
+  height: clamp(40px, 5vw, 50px);
+  margin-right: 10px;
+}
+header nav {
+  flex-grow: 1; /* Makes the nav expand to take available space */
+  text-align: center; /* Centers the navigation items */
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: center; /* Centers the nav items within the nav */
+}
+header nav ul li {
+  margin: 0 2%; /* Adds space between the nav items */
+}
+header nav ul li a {
+  font-family: "BA-Light", sans-serif;
+  font-size: clamp(14px, 1.5vw, 24px);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: #3B3B3B;
+}
+@media (max-width: 768px) {
+  header .nav {
+    display: none;
+  }
+}
+header .auth-buttons {
+  display: flex;
+  align-items: center;
+}
+header .auth-buttons a {
+  font-family: "BA-ExtraBold", sans-serif;
+  font-size: clamp(12px, 1.4vw, 20px);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  margin-left: 0.6em;
+}
+header .auth-buttons a.sign-in {
+  color: #3B3B3B;
+  background-color: transparent;
+  padding: 8px 5px;
+}
+header .auth-buttons a.register {
+  color: #ffffff;
+  background-color: #5795A7;
+}
+header .auth-buttons .menu {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+}
+header .auth-buttons .menu span {
+  width: 25px;
+  height: 4px;
+  background-color: #3B3B3B;
+  margin: 2px 0;
+  margin-left: 15px;
+  border-radius: 5px;
+}
+@media (max-width: 768px) {
+  header .auth-buttons .menu {
+    display: flex;
+  }
+}
+
+footer {
+  background-color: #F2F2F7;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+footer .footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .footer-content .footer-logo img {
+  height: 40px;
+}
+footer .footer-content .footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+footer .footer-content .footer-nav ul li {
+  margin-left: 30px;
+}
+footer .footer-content .footer-nav ul li a {
+  font-family: "BA-Light", sans-serif;
+  font-size: clamp(12px, 1.3vw, 20px);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: #3B3B3B;
+}
+
+#hero {
+  padding: 0px 0px;
+  height: 50vw;
+  min-height: 400px;
+  background-color: transparent;
+  z-index: -2;
+  overflow: visible;
+}
+#hero .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+}
+#hero .container .hero-content {
+  color: #3B3B3B;
+  flex: 1;
+  background-color: transparent;
+  text-align: center;
+  min-width: 400px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 2; /* Ensure content stays above the image */
+}
+#hero .container .hero-content h2 {
+  font-family: "BA-ExtraBold", sans-serif;
+  max-width: 600px;
+  font-size: clamp(24px, 3vw, 48px);
+  margin-bottom: 0px;
+}
+#hero .container .hero-content p {
+  font-family: "BA-Light", sans-serif;
+  max-width: 600px;
+  font-size: clamp(14px, 1.5vw, 24px);
+  margin-bottom: 7%;
+  margin-top: 0px;
+}
+#hero .container .hero-content .dot-separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 7%;
+  margin-top: 7%;
+}
+#hero .container .hero-content .dot-separator .dot {
+  width: 12px;
+  height: 12px;
+  background-color: #5795A7;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+#hero .container .hero-content .cta-buttons {
+  text-align: center;
+}
+#hero .container .hero-content .cta-buttons .btn {
+  font-family: "BA-ExtraBold", sans-serif;
+  font-size: clamp(14px, 1.5vw, 24px);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  padding: 8px 5px;
+  border-radius: 5px;
+  margin-left: 10px;
+  color: #3B3B3B;
+}
+#hero .container .hero-content .cta-buttons .btn.btn-secondary {
+  background-color: #5795A7;
+  color: #ffffff;
+  padding: 6px 18px;
+}
+#hero .container .hero-image {
+  flex: 1;
+  position: relative;
+  overflow: visible;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; /* Center the image vertically within the container */
+  height: 100%;
+}
+#hero .container .hero-image img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 115%;
+  width: auto;
+  object-fit: cover;
+  opacity: 70%;
+  margin-left: -50vw;
+  z-index: -1;
+}
+@media (max-width: 768px) {
+  #hero .container .hero-content {
+    flex-basis: 100%;
+    padding: 0px 20%;
+  }
+}
+
+#why-chambers {
+  background-color: #F2F2F7;
+  height: auto;
+  padding-top: 50px;
+  padding-bottom: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+#why-chambers .section-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content horizontally */
+  text-align: center; /* Center-align the text */
+  margin-bottom: 50px; /* Space between title and the reasons boxes */
+}
+#why-chambers .section-title .Filo-logo {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  margin-right: 20px; /* Space between the logo and the title */
+}
+#why-chambers .section-title .Filo-logo img {
+  height: 6vw; /* Adjust the logo size as needed */
+  opacity: 50%;
+}
+#why-chambers .section-title h3 {
+  font-family: "BA-ExtraBold", sans-serif;
+  font-size: clamp(28px, 3vw, 48px);
+  margin: 0;
+  text-align: center;
+}
+#why-chambers .reasons {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#why-chambers .reasons .reason {
+  flex: 0 0 25%; /* Make each reason box take up equal space */
+  margin: 0 1vw; /* Space between the reason boxes */
+  background-color: #ffffff;
+  min-width: 150px;
+  padding-left: 20px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+#why-chambers .reasons .reason h4 {
+  font-family: "BA-ExtraBold", sans-serif;
+  font-size: clamp(22px, 2.2vw, 40px);
+  color: #5795A7;
+  margin-bottom: 20px;
+}
+#why-chambers .reasons .reason p {
+  font-family: "BA-Light", sans-serif;
+  font-size: clamp(16px, 1.8vw, 32px);
+  color: #3B3B3B;
+}
+
+#benefits {
+  background-color: #ffffff;
+  padding: 60px 0;
+}
+#benefits .benefits-layout {
+  display: flex;
+  align-items: center;
+}
+#benefits .benefits-layout .benefits-title {
+  font-family: "BA-ExtraBold", sans-serif;
+  flex: 1;
+  text-align: center;
+  padding-right: 50px;
+  padding-left: 40px;
+}
+#benefits .benefits-layout .benefits-title h3 {
+  font-size: clamp(20px, 2.8vw, 44px);
+  margin-bottom: 20px;
+}
+#benefits .benefits-layout .benefits-list {
+  flex: 2.2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  text-align: left;
+  padding-right: 20px;
+}
+#benefits .benefits-layout .benefits-list .benefit {
+  padding: 0px;
+  display: flex;
+  justify-content: flex-start;
+}
+#benefits .benefits-layout .benefits-list .benefit .benefit-number {
+  font-family: "BA-ExtraBold", sans-serif;
+  font-size: 2vw;
+  color: #ffffff;
+  margin-right: 2vw;
+  background-color: #5795A7;
+  width: 4vw;
+  height: 4vw;
+  display: flex;
+  flex-shrink: 0; /* Prevent shrinking of the square */
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transform: rotate(45deg); /* Rotate the square by 45 degrees to make it a diamond */
+}
+#benefits .benefits-layout .benefits-list .benefit .benefit-number span {
+  transform: rotate(-45deg); /* Rotate the text back to normal */
+  display: block;
+}
+#benefits .benefits-layout .benefits-list .benefit #one {
+  background-color: #3B3B3B;
+}
+#benefits .benefits-layout .benefits-list .benefit #two {
+  background-color: #1E566C;
+}
+#benefits .benefits-layout .benefits-list .benefit #three {
+  background-color: #5795A7;
+}
+#benefits .benefits-layout .benefits-list .benefit #four {
+  background-color: #79BEC3;
+}
+#benefits .benefits-layout .benefits-list .benefit #benefit-one {
+  color: #3B3B3B;
+}
+#benefits .benefits-layout .benefits-list .benefit #benefit-two {
+  color: #1E566C;
+}
+#benefits .benefits-layout .benefits-list .benefit #benefit-three {
+  color: #5795A7;
+}
+#benefits .benefits-layout .benefits-list .benefit #benefit-four {
+  color: #79BEC3;
+}
+#benefits .benefits-layout .benefits-list .benefit .benefit-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+}
+#benefits .benefits-layout .benefits-list .benefit .benefit-content h4 {
+  font-family: "BA-ExtraBold", sans-serif;
+  font-size: clamp(18px, 2vw, 32px);
+  color: #5795A7;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  height: 4vw;
+  align-content: center;
+}
+#benefits .benefits-layout .benefits-list .benefit .benefit-content p {
+  font-family: "BA-Light", sans-serif;
+  font-size: clamp(15px, 1.6vw, 26px);
+  color: #3B3B3B;
+}
+
+#contact-main {
+  display: flex;
+  justify-content: space-between;
+  height: 70vh;
+  background-color: transparent;
+}
+#contact-main .contact-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  min-width: 400px;
+}
+#contact-main .contact-content h2 {
+  font-family: "BA-ExtraBold", sans-serif;
+  font-size: 1.5rem;
+  color: #3B3B3B;
+  margin-bottom: 0px;
+  text-align: center;
+}
+#contact-main .contact-content p {
+  font-family: "BA-Light", sans-serif;
+  font-size: 1rem;
+  color: #3B3B3B;
+  margin-bottom: 10px;
+  text-align: center;
+}
+#contact-main .contact-content .contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#contact-main .contact-content .contact-form input,
+#contact-main .contact-content .contact-form textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 0px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: "BA-Light", sans-serif;
+  background-color: #F2F2F7;
+}
+#contact-main .contact-content .contact-form .btn {
+  width: 100%;
+  padding: 5px;
+  background-color: #1E566C;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#contact-main .contact-content .contact-form .btn:hover {
+  background-color: #5795A7;
+}
+#contact-main .hero-image {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  background-color: transparent;
+}
+#contact-main .hero-image img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  opacity: 100%;
+}
+
+body {
+  font-family: "BA-Light", sans-serif;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #3B3B3B;
+  overflow-x: hidden; /* Prevent horizontal scrolling on the body */
+}
+
+/*# sourceMappingURL=styles.css.map */

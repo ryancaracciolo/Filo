@@ -193,68 +193,67 @@ footer .footer-content .footer-nav ul li a {
   }
 }
 
-#hero {
+.hero-home {
+  position: relative;
   padding: 0px 0px;
   height: 50vw;
   min-height: 400px;
-  background-color: transparent;
   z-index: -2;
-  overflow: visible;
+  overflow: hidden;
 }
-#hero .container {
+.hero-home .container {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-color: transparent;
-}
-#hero .container .hero-content {
-  color: #3B3B3B;
-  flex: 1;
-  background-color: transparent;
-  text-align: center;
-  min-width: 0px;
   padding-left: 20px;
   padding-right: 20px;
+}
+.hero-home .container .hero-content {
+  color: #3B3B3B;
+  flex-basis: 50%;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-bottom: 5%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  flex-grow: 1;
   z-index: 2; /* Ensure content stays above the image */
 }
-#hero .container .hero-content h2 {
+.hero-home .container .hero-content h2 {
   font-family: "BA-ExtraBold", sans-serif;
   max-width: 600px;
   font-size: clamp(24px, 3vw, 48px);
   margin-bottom: 0px;
 }
-#hero .container .hero-content p {
+.hero-home .container .hero-content p {
   font-family: "BA-Light", sans-serif;
   max-width: 600px;
   font-size: clamp(14px, 1.5vw, 32px);
   margin-bottom: 7%;
   margin-top: 0px;
 }
-#hero .container .hero-content .dot-separator {
+.hero-home .container .hero-content .dot-separator {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 7%;
   margin-top: 7%;
 }
-#hero .container .hero-content .dot-separator .dot {
+.hero-home .container .hero-content .dot-separator .dot {
   width: clamp(8px, 1.5vw, 16px);
   height: clamp(8px, 1.5vw, 16px);
   background-color: #5795A7;
   border-radius: 50%;
   margin: 0 5px;
 }
-#hero .container .hero-content .cta-buttons {
+.hero-home .container .hero-content .cta-buttons {
   text-align: center;
 }
-#hero .container .hero-content .cta-buttons .btn {
+.hero-home .container .hero-content .cta-buttons .btn {
   font-family: "BA-ExtraBold", sans-serif;
   font-size: clamp(12px, 1.3vw, 24px);
   letter-spacing: 0.5px;
@@ -264,26 +263,31 @@ footer .footer-content .footer-nav ul li a {
   margin-left: clamp(8px, 1.2vw, 12px);
   color: #3B3B3B;
 }
-#hero .container .hero-content .cta-buttons .btn.btn-secondary {
+.hero-home .container .hero-content .cta-buttons .btn.btn-secondary {
   background-color: #5795A7;
   color: #ffffff;
   padding: 6px clamp(15px, 1.6vw, 20px);
 }
-#hero .container .hero-image {
-  flex: 1;
-  position: relative;
-  overflow: visible;
-  background-color: transparent;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center; /* Center the image vertically within the container */
-  height: 100%;
+@media (max-width: 768px) {
+  .hero-home .container .hero-content {
+    flex-basis: 100%;
+    padding: 0px 10%;
+  }
 }
-#hero .container .hero-image img {
+.hero-home .hero-image {
   position: absolute;
   top: 0;
   right: 0;
-  height: 115%;
+  height: 100%;
+  width: auto;
+  background-color: transparent;
+}
+.hero-home .hero-image img {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 120%;
   width: auto;
   object-fit: cover;
   opacity: 70%;
@@ -291,12 +295,8 @@ footer .footer-content .footer-nav ul li a {
   z-index: -1;
 }
 @media (max-width: 768px) {
-  #hero .container .hero-image img {
-    margin-right: -100px;
-  }
-  #hero .container .hero-content {
-    flex-basis: 100%;
-    padding: 0px 10%;
+  .hero-home .hero-image {
+    right: -120px;
   }
 }
 
@@ -490,52 +490,60 @@ footer .footer-content .footer-nav ul li a {
 
 main {
   position: relative;
-  height: calc(100vh - 130px);
+  height: 40vw;
 }
 main .contact-section {
   position: relative;
-  align-items: center;
   height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 main .contact-section .contact-content {
-  position: absolute;
-  top: 5vh;
-  left: 5vw;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
   z-index: 1;
-  width: 50%;
+  padding-left: 8%;
+  padding-right: 8%;
+  gap: 4%;
+}
+main .contact-section .contact-content .contact-info {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-width: 200px;
-  max-width: 500px;
-}
-main .contact-section .contact-content h2 {
-  font-family: "BA-ExtraBold", sans-serif;
-  font-size: 1.5rem;
-  color: #3B3B3B;
-  margin-bottom: 0px;
+  justify-content: flex-start;
   text-align: center;
 }
-main .contact-section .contact-content p {
-  font-family: "BA-Light", sans-serif;
-  font-size: 1rem;
+main .contact-section .contact-content .contact-info h2 {
+  font-family: "BA-ExtraBold", sans-serif;
+  font-size: clamp(24px, 3vw, 48px);
   color: #3B3B3B;
   margin-bottom: 10px;
-  text-align: center;
+}
+main .contact-section .contact-content .contact-info p {
+  font-family: "BA-Light", sans-serif;
+  font-size: clamp(14px, 1.5vw, 32px);
+  color: #3B3B3B;
+  margin-bottom: 10px;
 }
 main .contact-section .contact-content .contact-form {
-  display: block;
+  flex: 1;
+  display: block-inline;
+  width: 100%;
   text-align: center;
+  max-width: 400px;
 }
 main .contact-section .contact-content .contact-form input,
 main .contact-section .contact-content .contact-form textarea {
   width: 100%;
-  padding: 5px 8px;
+  padding: 1% 2%;
   margin-top: 7px;
   box-sizing: border-box;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: clamp(14px, 1.5vw, 32px);
   font-family: "BA-Light", sans-serif;
   background-color: #F2F2F7;
 }
@@ -545,7 +553,7 @@ main .contact-section .contact-content .contact-form .btn {
   padding: 5px;
   background-color: #1E566C;
   color: white;
-  font-size: 1rem;
+  font-size: clamp(14px, 1.5vw, 32px);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -573,11 +581,16 @@ main .contact-section .contact-image img {
   min-height: 100%;
   z-index: 0;
   object-fit: cover;
-  opacity: 100%;
+  opacity: 10%;
 }
 @media (max-width: 768px) {
   main .contact-section .contact-content {
-    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+  }
+  main .contact-section .contact-info {
+    max-width: 400px;
   }
 }
 

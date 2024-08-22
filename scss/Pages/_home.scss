@@ -1,35 +1,33 @@
 
-#hero {
+.hero-home {
+    position: relative;
     padding: 0px 0px;
     height: 50vw;
     min-height: 400px;
-    background-color: transparent;
     z-index: -2;
-    overflow: visible;
+    overflow: hidden;
 
     .container  {
         height: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         background-color: transparent;
+        padding-left: 20px;
+        padding-right: 20px;
 
         .hero-content {
             color: $grey-dark-color;
-            flex: 1;
-            background-color: transparent;
+            flex-basis: 50%;
             text-align: center;
-            min-width: 0px;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
             padding-bottom: 5%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            flex-grow: 1;
             z-index: 2; /* Ensure content stays above the image */
-
 
             h2 {
                 font-family: $Font-bold;
@@ -83,37 +81,39 @@
             }
         }
 
-        .hero-image {
-            flex: 1;
-            position: relative;
-            overflow: visible;
-            background-color: transparent;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center; /* Center the image vertically within the container */
-            height: 100%;
-            
-            img {
-                position: absolute;
-                top: 0;
-                right: 0;
-                height: 115%;
-                width: auto;
-                object-fit: cover;
-                opacity: 70%;
-                margin-left: -50vw;
-                z-index: -1;
-            }
-        }
-
         @media (max-width: 768px) {
-            .hero-image img {
-                margin-right: -100px;
-            }
             .hero-content {
                 flex-basis: 100%;
                 padding: 0px 10%;
             }
+        }
+    }
+
+    .hero-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: auto;
+        background-color: transparent;
+        
+        img {
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 120%;
+            width: auto;
+            object-fit: cover;
+            opacity: 70%;
+            margin-left: -50vw;
+            z-index: -1;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-image {
+            right: -120px;
         }
     }
 }

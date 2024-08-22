@@ -3,6 +3,7 @@ footer {
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
+    z-index: 1000;
 
     .footer-content {
         display: flex;
@@ -28,6 +29,12 @@ footer {
                     letter-spacing: 0.5px;
                     text-decoration: none;
                     color: $grey-dark-color;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .nav-item {
+                  display: none;
                 }
             }
         }

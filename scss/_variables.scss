@@ -16,6 +16,14 @@ $Font-regular: 'BA-Light', sans-serif;
 $Font-bold: 'BA-ExtraBold', sans-serif;
 $Font-extraBold: 'BA-ExtraBold', sans-serif;
 
+// Common Font Sizes to normalize the text size accross the website
+$Font-size-xs: clamp(10px, 1.1vw, 20px);
+$Font-size-s: clamp(12px, 1.3vw, 24px);
+$Font-size-m: clamp(14px, 1.5vw, 32px);
+$Font-size-l: clamp(24px, 3.0vw, 48px);
+$Font-size-xl: clamp(28px, 4.0vw, 56px);
+
+
 
 // Filo Font Family
 @font-face {
